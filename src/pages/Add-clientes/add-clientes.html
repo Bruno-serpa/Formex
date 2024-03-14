@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formex</title>
+</head>
+<body>
+    <!-------------------------------------------------------- Header ---------------------------------------------------------------------------------->
+
+    <header>
+        <a href="../Clientes/clientes.html">
+            <div id="btnVoltar">
+                <img class="voltar" src="../../images/voltar.png" alt="Voltar">
+            </div>
+        </a>
+        <div class="titulo">
+            <h1>Adicionar Clientes</h1>
+        </div>
+    </header>
+
+    <!--------------------------------------------------------- Main ---------------------------------------------------------------------------------->
+
+    <main>
+        <form id="formularioCliente" onsubmit="return salvarDados();">
+    
+            <label for="cliente">Nome do Cliente:</label>
+            <input class="add-dados" type="text" name="cliente" id="cliente" required>
+            <span id="avisoNomeExistente" style="color: red; display: none; margin-bottom: 10px;">Já existe um produto com esse nome, por favor use outro nome</span>
+
+            <label for="cnpj">CNPJ:</label>
+            <input class="add-dados" type="text" name="cnpj" id="cnpj" autocomplete="off" maxlength="18">
+
+            <label for="cep">CEP:</label>
+            <input class="add-dados" type="text" name="cep" id="cep" autocomplete="off" maxlength="9">
+
+            <label for="inscricao">Inscrição Estadual:</label>
+            <input class="add-dados" type="text" name="inscricao" id="inscricao">
+
+            <label for="cidade">Cidade:</label>
+            <input class="add-dados" type="text" name="cidade" id="cidade">
+
+            <label for="fone">Telefone:</label>
+            <input class="add-dados" type="tel" name="fone" id="fone" autocomplete="off" maxlength="15">
+
+            <label for="bairro">Bairro:</label>
+            <input class="add-dados" type="text" name="bairro" id="bairro">
+
+            <label for="endereco">Endereço:</label>
+            <input class="add-dados" type="text" name="endereco" id="endereco">
+
+            <button class="imprimir" id="imprimir" type="submit">Adicionar Cliente</button>
+        </form>
+    </main>
+    
+
+    <!--------------------------------------------------------- Footer ---------------------------------------------------------------------------------->
+
+    <footer>
+        
+    </footer>
+
+    <!-------------------------------------------------------- Script ---------------------------------------------------------------------------------->
+    <script src="formatar-dados.js"></script>
+    <script src="salvar.js"></script>
+    <script src="proximo.js"></script>
+
+</body>
+</html>

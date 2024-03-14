@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="detalhes-cliente.css">
+    <title>Formex</title>
+</head>
+<body>
+
+    <!-------------------------------------------------------- Header ---------------------------------------------------------------------------------->
+
+    <header>
+        <a href="../Clientes/clientes.html">
+            <div id="btnVoltar">
+                <img class="voltar" src="../../images/voltar.png" alt="Voltar">
+            </div>
+        </a>
+        <div class="titulo">
+            <h1>Detalhes do Cliente</h1>
+        </div>
+    </header>
+
+    <!--------------------------------------------------------- Main ---------------------------------------------------------------------------------->
+
+    <main>
+        <form id="formularioCliente">
+            <label for="cliente">Nome do Cliente:</label>
+            <input class="add-dados" type="text" name="cliente" id="cliente" required>
+            <span id="avisoClienteExistente" style="color: red; display: none; margin-bottom: 10px;">Já existe um cliente com esse nome, por favor use outro nome</span>
+            <span id="avisoAddNome" style="color: red; display: none; margin-bottom: 10px;">Por favor adicione um nome ao cliente</span>
+            
+            <label for="cnpj">CNPJ:</label>
+            <input class="add-dados" type="text" name="cnpj" id="cnpj" autocomplete="off" maxlength="18">
+
+            <label for="cep">CEP:</label>
+            <input class="add-dados" type="text" name="cep" id="cep" autocomplete="off" maxlength="9">
+
+            <label for="inscricao">Inscrição Estadual:</label>
+            <input class="add-dados" type="text" name="inscricao" id="inscricao">
+
+            <label for="cidade">Cidade:</label>
+            <input class="add-dados" type="text" name="cidade" id="cidade">
+
+            <label for="fone">Telefone:</label>
+            <input class="add-dados" type="tel" name="fone" id="fone" autocomplete="off" maxlength="15">
+
+            <label for="bairro">Bairro:</label>
+            <input class="add-dados" type="text" name="bairro" id="bairro">
+
+            <label for="endereco">Endereço:</label>
+            <input class="add-dados" type="text" name="endereco" id="endereco">
+
+            <!-- Adicionando evento onclick diretamente ao botão -->
+            <button type="button" onclick="salvarCliente()">Editar Cliente</button>
+        </form>
+    </main>
+
+    <!--------------------------------------------------------- Footer ---------------------------------------------------------------------------------->
+    <footer>
+        
+    </footer>
+
+    <!--------------------------------------------------------- Script ---------------------------------------------------------------------------------->
+    
+    <script src="formatar-dados.js"></script>
+    <script src="editar.js"></script>
+    <script src="proximo.js"></script>
+
+    <!-- Script para carregar os detalhes do cliente -->
+<script>
+    // Fazendo uma requisição AJAX para carregar o conteúdo do arquivo
+    const urlParams = new URLSearchParams(window.location.search);
+    const cliente = urlParams.get('cliente');
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `C:/Users/${process.env.USERNAME}/AppData/Roaming/Formex/Dados do App/Clientes/${cliente}`, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const conteudoArquivo = xhr.responseText;
+
+            // Dividindo o conteúdo em linhas
+            const linhas = conteudoArquivo.split('\n');
+
+            // Extraindo os dados das linhas
+            let nomeCliente, cnpj, cep, inscricaoEstadual, cidade, telefone, bairro, endereco;
+            linhas.forEach(linha => {
+                if (linha.startsWith('Cliente:')) {
+                    nomeCliente = linha.split(':')[1].trim();
+                } else if (linha.startsWith('CNPJ:')) {
+                    cnpj = linha.split(':')[1].trim();
+                } else if (linha.startsWith('CEP:')) {
+                    cep = linha.split(':')[1].trim();
+                } else if (linha.startsWith('Inscrição Estadual:')) {
+                    inscricaoEstadual = linha.split(':')[1].trim();
+                } else if (linha.startsWith('Cidade:')) {
+                    cidade = linha.split(':')[1].trim();
+                } else if (linha.startsWith('Fone:')) {
+                    telefone = linha.split(':')[1].trim();
+                } else if (linha.startsWith('Bairro:')) {
+                    bairro = linha.split(':')[1].trim();
+                } else if (linha.startsWith('Endereço:')) {
+                    endereco = linha.split(':')[1].trim();
+                }
+            });
+
+            // Atualizando o HTML com os dados extraídos
+            document.getElementById('cliente').value = nomeCliente;
+            document.getElementById('cnpj').value = cnpj;
+            document.getElementById('cep').value = cep;
+            document.getElementById('inscricao').value = inscricaoEstadual;
+            document.getElementById('cidade').value = cidade;
+            document.getElementById('fone').value = telefone;
+            document.getElementById('bairro').value = bairro;
+            document.getElementById('endereco').value = endereco;
+
+            // Definindo o valor de nomeClienteAnterior igual ao valor de nomeCliente
+            nomeClienteAnterior = nomeCliente;
+        }
+    };
+    xhr.send();
+</script>
+
+
+</body>
+</html>

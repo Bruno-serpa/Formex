@@ -1,0 +1,44 @@
+{
+  "name": "formex",
+  "version": "1.0.0",
+  "description": "Gerenciador de Dados",
+  "main": "main.js",
+
+  "scripts": {
+    "start": "electron ."
+  },
+
+  "build": {
+    "appId": "com.dracster.formex",
+    "productName": "Formex",
+    "win": {
+      "target": ["nsis"],
+      "artifactName": "${productName} Setup ${version}.${ext}",
+      "publisherName": "Dracster Studio",
+      "icon": "src/images/icon.ico",
+      "asar": true
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Formex",
+      "license": "LICENSE.md"
+    }
+  },
+
+  "keywords": [],
+
+
+  "author": {
+    "name": "Dracster Studio",
+    "email": "bruno30.serpa@gmail.com"
+  }, 
+
+  "license": "ISC",
+
+  "devDependencies": {
+    "electron": "^28.2.6",
+    "electron-builder": "^24.13.3"
+  }
+}

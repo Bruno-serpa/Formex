@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formex</title>
+</head>
+<body>
+
+    <!-------------------------------------------------------- Header ---------------------------------------------------------------------------------->
+
+    <header>
+        <a href="../Produtos/produtos.html">
+            <div id="btnVoltar">
+                <img class="voltar" src="../../images/voltar.png" alt="Voltar">
+            </div>
+        </a>
+        <div class="titulo">
+            <h1>Adicionar Produto</h1>
+        </div>
+    </header>
+
+    <!--------------------------------------------------------- Main ---------------------------------------------------------------------------------->
+
+    <main>
+        <form id="formularioProduto" onsubmit="return salvarDados();">
+            <label for="imagem">Imagem:</label>
+            <div class="img-produto">
+                <img src="../../images/add-imagem.jpeg" alt="Preview da imagem" id="previewImagem"></img>
+                <input class="pegar-img" type="file" id="imagem" name="imagem" accept="image/*" required>
+            </div>
+    
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Torneira" required>
+                <span id="avisoNomeExistente" style="color: red; display: none; margin-bottom: 10px;">Já existe um produto com esse nome, por favor use outro nome</span>
+            </div>
+
+            <label for="valor">Valor:</label>
+            <input type="text" id="valor" name="valor" placeholder="R$ 0,00" required>
+    
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="6" placeholder="Sua descrição aqui..."></textarea>
+    
+            <button type="submit">Adicionar Produto</button>
+        </form>
+    </main>
+    
+
+    <!--------------------------------------------------------- Footer ---------------------------------------------------------------------------------->
+
+    <footer>
+        
+    </footer>
+
+    <!-------------------------------------------------------- Script ---------------------------------------------------------------------------------->
+    <script src="preview-imagem.js"></script>
+    <script src="formatar-valor.js"></script>
+    <script src="salvar.js"></script>
+    
+</body>
+</html>

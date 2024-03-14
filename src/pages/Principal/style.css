@@ -1,0 +1,149 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'ubutun';
+    src: url(../../fonts/Ubuntu-Regular.ttf) format('opentype');
+}
+
+:root{
+    --primary: #FF4364;
+    --secundary: #ff7e96;
+    --background: #F6F6F8;
+    --text: #1b1b1b;
+    --text-secundary: #4b4b4b;
+
+    --font-padrao: 'ubutun', sans-serif;
+}
+
+/*------------------------------------- Header ----------------------------------------------------------------------------------*/
+
+html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+body{
+    width: 20cm;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    color: var(--text);
+    font-family: var(--font-padrao);
+}
+
+/*------------------------------------- Main ----------------------------------------------------------------------------------*/
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-add{
+    display: flex;
+    align-items: center;
+}
+
+.content-recentes{
+    margin-right: auto;
+}
+
+.recibos-recentes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recentes{
+    font-size: 23px;
+    color: var(--text);
+    font-family: var(--font-padrao);
+}
+
+.add{
+    font-size: 30px;
+    font-weight: bolder;
+    width: 25px;
+    height: 25px;
+    border-radius: 7px;
+    background-color: var(--primary);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.add:hover{
+    background: var(--secundary);
+}
+
+.bt-add{
+    text-decoration: none;
+    color: var(--background);
+}
+
+/* Recibos */
+
+#recibosRecentes {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#recibosRecentes p {
+    font-size: 16px;
+    text-align: center;
+}
+
+#recibosRecentes .recibo-item {
+    width: 700px;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #acacac;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between; /* Adiciona espaçamento entre os itens */
+    align-items: center; /* Alinha os itens verticalmente */
+    cursor: pointer;
+}
+
+.excluir-btn img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.excluir-btn img:hover {
+    filter: brightness(90%); /* Adiciona um efeito de brilho ao passar o mouse sobre a imagem */
+}
+
+
+
+/*------------------------------------- Footer ----------------------------------------------------------------------------------*/
+
+footer{
+    padding: 30px 200px 30px 30px;
+}
+
+#versao{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: var(--font-padrao);
+    font-size: 14px;
+    color: var(--text-secundary);
+}

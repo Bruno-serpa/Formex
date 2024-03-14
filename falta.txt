@@ -1,0 +1,8 @@
+Falta fazer:
+
+- Criar configurações
+- Revisar tudo
+
+Erros:
+
+- depois que muda o nome duas vezes no mesma tela do detalhes-produto.html, ele cria outro arquivo em vez de editar o atual

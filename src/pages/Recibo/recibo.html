@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formex</title>
+</head>
+<body>
+    <div class="principal">
+        <!-- Voltar -->
+        <a href="../Principal/index.html" class="voltar" id="btnVoltar">
+            <img src="../../images/voltar.png" alt="Voltar">
+        </a>
+
+        <!-------------------------------------------------------- Header ---------------------------------------------------------------------------------->
+
+        <header>
+            <div class="info-top">
+                <p style="font-weight: bold;">Formex</p>
+                <p id="data">Emitido em xx/xx/xxxx às xx:xx</p>
+            </div>
+            <h1>Nome Empresa</h1>
+            <div class="info-empresa">
+                <img class="logo" src="../../images/logo.png" alt="logo">
+                <div class="sub-empresa">
+                    <div class="sub-info" id="s1">
+                        <p>CNPJ: 00.000.000/0001-00</p>
+                        <P>CEP: 0000-000</P>
+                        <P>Bairro: xxxxxxxxxx</P>
+                    </div>
+                    <div class="sub-info" id="s2">
+                        <p>Inscrição estadual: 0000000000</p>
+                        <p>Endereço: xxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxx</p>
+                        <p>Cidade: xxxxxxxxxx - XX</p>
+                    </div>
+                    <div class="sub-info">
+                        <p>Fone: (00) 9 0000-0000</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h2>
+                <div class="content-cliente-infor">Cliente: <input class="add-dados" type="text" name="cliente" id="cliente" list="clientes-datalist"></div>
+                <datalist id="clientes-datalist"></datalist>
+            </h2>
+            <div class="sub-cliente">
+                <div class="sub-info">
+                    <div class="content-cliente-infor">
+                        CNPJ: <input class="add-dados" type="text" name="cnpj" id="cnpj" autocomplete="off" maxlength="18">
+                    </div>
+                    <div class="content-cliente-infor">
+                        CEP: <input class="add-dados" type="text" name="cep" id="cep" autocomplete="off" maxlength="9">
+                    </div>
+                </div>
+                <div class="sub-info">
+                    <div class="content-cliente-infor">
+                        Inscrição: <input class="add-dados" type="text" name="inscricao" id="inscricao">
+                    </div>
+                    <div class="content-cliente-infor">
+                        Cidade: <input class="add-dados" type="text" name="cidade" id="cidade">
+                    </div>
+                </div>
+                <div class="sub-info">
+                    <div class="content-cliente-infor">
+                        Fone: <input class="add-dados" type="tel" name="fone" id="fone" autocomplete="off" maxlength="15">
+                    </div>
+                    <div class="content-cliente-infor">
+                        Bairro: <input class="add-dados" type="text" name="bairro" id="bairro">
+                    </div>
+        
+                </div>
+            </div>
+            <div class="content-cliente-infor" id="endereco-cont">Endereço: <input class="add-dados" type="text" name="endereco" id="endereco"></div>
+            <hr class="hr-menor">
+            <div class="content-produtos">
+                <input type="checkbox" id="toggleInput">
+                <h2 id="textToToggle">Produtos</h2>
+                <p></p>
+            </div>
+            <hr class="hr-menor">
+        </header>
+
+        <!--------------------------------------------------------- Main ---------------------------------------------------------------------------------->
+
+        <main>
+            <table id="tabelaProdutosSelecionados">
+                <thead>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </main>
+        
+        <!--------------------------------------------------------- Footer ---------------------------------------------------------------------------------->
+
+        <footer>
+            <hr>
+            <div class="resultados">
+                <div>
+                    <label for="frete">Frete:</label>
+                    <input type="text" name="frete" id="frete" placeholder="R$ 0,00" value="R$ 0,00">
+                </div>
+                <div>
+                    <label for="desconto">Desconto:</label>
+                    <input type="text" name="desconto" id="desconto" placeholder="R$ 0,00" value="R$ 0,00">
+                </div>
+                <div class="t_roduto">
+                    <p>Total do Pedido</p>
+                    <p id="valor_total" style="margin-top: 10px;">R$ 0,00</p>
+                </div>
+            </div>
+            <button type="button">Salvar</button>
+        </footer>
+    </div>
+    
+    <!--------------------------------------------------------- Produtos ---------------------------------------------------------------------------------->
+
+    <div class="cont-produtos">
+        <div class="content-add">
+            <div class="content-recentes">
+                <p class="recentes">Produtos:</p>
+            </div>
+        </div>
+        <div>
+            <input type="text" id="inputPesquisa" placeholder="Pesquisar produtos">
+            <hr>
+        </div>
+        <div id="listaProdutos"></div>
+        <div class="recibos-recentes">
+            <p>Nenhum Produto encontrado</p>
+        </div>
+    </div>
+
+    <!-------------------------------------------------------- Script ---------------------------------------------------------------------------------->
+    <script src="salvar.js"></script>
+    <script src="dados.js"></script>
+    <script src="formatar-dados.js"></script>
+    <script src="autocomplete.js"></script>
+    <script src="verProdutos.js"></script>
+    <script src="formatar-valor.js"></script>
+</body>
+</html>

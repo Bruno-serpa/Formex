@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../../images/icon.png" type="image/x-icon">
+    <title>Formex</title>
+</head>
+<body>
+
+    <!-- Voltar -->
+    <a href="../Principal/index.html">
+        <div class="voltar" id="btnVoltar">
+            <img src="../../images/voltar.png" alt="Voltar">
+        </div>
+    </a>
+
+    <!-------------------------------------------------------- Header ---------------------------------------------------------------------------------->
+
+    <header>
+        <h1>Produtos</h1>
+    </header>
+
+    <!--------------------------------------------------------- Main ---------------------------------------------------------------------------------->
+
+    <main>
+        <div class="content-add">
+            <div class="content-recentes">
+                <p class="recentes">Todos:</p>
+            </div>
+            <a class="bt-add" href="../Add-produto/add-produto.html">
+                <div class="add">+</div>
+            </a>
+        </div>
+        <div>
+            <input type="text" id="inputPesquisa" placeholder="Pesquisar produtos">
+            <hr>
+        </div>
+        <div id="listaProdutos"></div>
+        <div class="recibos-recentes">
+            <p>Nenhum Produto encontrado</p>
+        </div>
+    </main>
+
+    <!--------------------------------------------------------- Footer ---------------------------------------------------------------------------------->
+
+    <footer>
+        
+    </footer>
+
+    <!-------------------------------------------------------- Script ---------------------------------------------------------------------------------->
+    
+    <script src="verProdutos.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'ubutun';
+    src: url(../../fonts/Ubuntu-Regular.ttf) format('opentype');
+}
+
+:root{
+    --primary: #FF4364;
+    --secundary: #ff7e96;
+    --background: #F6F6F8;
+    --text: #1b1b1b;
+    --text-secundary: #4b4b4b;
+
+    --font-padrao: 'ubutun', sans-serif;
+    --font-secundary: 'Times New Roman', Times, serif;
+}
+
+/* Vai sair */
+
+.voltar {
+    display: none;
+}
+
+#imprimir{
+    display: none;
+}
+
+#print-pdf{
+    display: none;
+}
+
+.total_p{
+    border-bottom: #898989 solid 1px;
+    width: 100%;
+    text-align: center;
+}

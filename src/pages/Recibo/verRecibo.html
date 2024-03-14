@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="verStyle.css">
+    <link rel="stylesheet" href="estilos/impressora.css" media="print">
+    <title>Recibo</title>
+</head>
+<body>
+    <div class="principal">
+        <!-- Voltar -->
+        <a href="../Principal/index.html" class="voltar" id="btnVoltar"">
+            <img src="../../images/voltar.png" alt="Voltar">
+        </a>
+
+        <!-------------------------------------------------------- Header ---------------------------------------------------------------------------------->
+
+        <header>
+            <div class="info-top">
+                <p style="font-weight: bold;">Recibo</p>
+                <p id="data">Emitido em xx/xx/xxxx às xx:xx</p>
+            </div>
+            <h1>Nome Empresa</h1>
+            <div class="info-empresa">
+                <img class="logo" src="../../images/logo.png" alt="logo">
+                <div class="sub-empresa">
+                    <div class="sub-info" id="s1">
+                        <p>CNPJ: 00.000.000/0001-00</p>
+                        <P>CEP: 0000-000</P>
+                        <P>Bairro: xxxxxxxxxx</P>
+                    </div>
+                    <div class="sub-info" id="s2">
+                        <p>Inscrição estadual: 0000000000</p>
+                        <p>Endereço: xxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxx</p>
+                        <p>Cidade: xxxxxxxxxx - XX</p>
+                    </div>
+                    <div class="sub-info">
+                        <p>Fone: (00) 9 0000-0000</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h2>
+                <div class="content-cliente-infor">Cliente: <input class="cliente-dados" type="text" name="cliente" id="cliente" readonly></div>
+            </h2>
+            <div class="sub-cliente">
+                <div class="sub-info">
+                    <div class="content-cliente-infor">
+                        CNPJ: <input class="cliente-dados" type="text" name="cnpj" id="cnpj" autocomplete="off" readonly>
+                    </div>
+                    <div class="content-cliente-infor">
+                        CEP: <input class="cliente-dados" type="text" name="cep" id="cep" autocomplete="off" readonly>
+                    </div>
+                </div>
+                <div class="sub-info">
+                    <div class="content-cliente-infor">
+                        Inscrição: <input class="cliente-dados" type="text" name="inscricao" id="inscricao" readonly>
+                    </div>
+                    <div class="content-cliente-infor">
+                        Cidade: <input class="cliente-dados" type="text" name="cidade" id="cidade" readonly>
+                    </div>
+                </div>
+                <div class="sub-info">
+                    <div class="content-cliente-infor">
+                        Fone: <input class="cliente-dados" type="tel" name="fone" id="fone" autocomplete="off" readonly>
+                    </div>
+                    <div class="content-cliente-infor">
+                        Bairro: <input class="cliente-dados" type="text" name="bairro" id="bairro" readonly>
+                    </div>
+        
+                </div>
+            </div>
+            <div class="content-cliente-infor" id="endereco-cont">Endereço: <input class="cliente-dados" type="text" name="endereco" id="endereco" readonly></div>
+            <hr class="hr-menor">
+            <div class="cont_orc_prod">
+                <h2 id="orc_prod">Produtos</h2>
+            </div>
+            <hr>
+        </header>
+
+        <!--------------------------------------------------------- Main ---------------------------------------------------------------------------------->
+
+        <main>
+            <table id="tabelaProdutosSelecionados">
+                <thead>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </main>
+        
+        <!--------------------------------------------------------- Footer ---------------------------------------------------------------------------------->
+
+        <footer>
+            <hr>
+            <div class="totais">
+                <h2 style="margin-top: 0px; font-weight: bold;">Totais</h2>
+            </div>
+            <hr>
+            <div class="resultados">
+                <div>
+                    <label for="frete">Frete:</label>
+                    <input class="add-dados" type="text" name="frete" id="frete" placeholder="R$ 0,00" value="R$ 0,00" readonly>
+                </div>
+                <div>
+                    <label for="desconto">Desconto:</label>
+                    <input class="add-dados" type="text" name="desconto" id="desconto" placeholder="R$ 0,00" value="R$ 0,00" readonly>
+                </div>
+                <div class="t_roduto">
+                    <p class="total_p" style="padding-top: 5px; padding-bottom: 5px;">Total do Pedido</p>
+                    <input class="valor-dados" type="text" id="valor_total" placeholder="R$ 0,00" value="R$ 0,00" readonly>
+                </div>
+            </div>
+            <button id="imprimir" style="margin-bottom: 50px;" type="button" onclick="window.print()">Imprimir</button>
+            <!-- Botão para converter para PDF -->
+            <button id='print-pdf'>Salvar em PDF</button>
+
+        </footer>
+    </div>
+
+    <!-------------------------------------------------------- Script ---------------------------------------------------------------------------------->
+    <script src="pegarDados.js"></script>
+    <script src="toPDF.js"></script>
+</body>
+</html>
+

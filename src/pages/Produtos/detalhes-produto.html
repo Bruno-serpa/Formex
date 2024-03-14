@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="detalhes-produto.css">
+    <title>Formex</title>
+</head>
+<body>
+
+    <!-------------------------------------------------------- Header ---------------------------------------------------------------------------------->
+
+    <header>
+        <a href="../Produtos/produtos.html">
+            <div id="btnVoltar">
+                <img class="voltar" src="../../images/voltar.png" alt="Voltar">
+            </div>
+        </a>
+        <div class="titulo">
+            <h1>Detalhes do Produto</h1>
+        </div>
+    </header>
+
+    <!--------------------------------------------------------- Main ---------------------------------------------------------------------------------->
+    
+    <main>
+        <div class="content">
+            <div class="img-nome">
+
+                <input type="file" id="inputImagem" accept="image/*" style="display: none;" onchange="carregarImagem()">
+                <label for="inputImagem">
+                    <img id="imagemProduto" src="" alt="Imagem do Produto" style="cursor: pointer;">
+                </label>
+
+                <div class="content-nome">
+                    <label for="nomeProduto">Nome do Produto:</label>
+                    <input type="text" id="nomeProduto" name="nomeProduto" placeholder="Torneira" required>
+                    <span id="avisoNomeExistente" style="color: red; display: none; margin-bottom: 10px;">Já existe um produto com esse nome, por favor use outro nome</span>
+                </div>
+
+            </div>
+            <div>
+
+                <label for="valorProduto">Valor:</label>
+                <input type="text" id="valorProduto" name="valorProduto" placeholder="R$ 0,00" required>
+
+            </div>
+            <div>
+
+                <label for="descricaoProduto">Descrição:</label>
+                <textarea id="descricaoProduto" name="descricaoProduto" rows="6" placeholder="Sua descrição aqui..." required></textarea>
+                
+            </div>
+            <button type="button" id="btnSalvarProduto" onclick="salvarProduto()">Salvar Produto</button>
+            <input style="display: none;" type="text" id="nomeArquivoAtual" name="nomeArquivoAtual" placeholder="Nome do produto antigo">
+        </div>
+    </main>
+
+    <!--------------------------------------------------------- Script ---------------------------------------------------------------------------------->
+
+    <script src="formatar-valor.js"></script>
+    <script src="editar.js"></script>
+
+    <!-- Próximo ao apertar enter -->
+    <script>
+        // Adicionar eventos de teclado para os campos de entrada
+        document.getElementById('nomeProduto').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Evitar o comportamento padrão do Enter em um campo de texto
+                document.getElementById('valorProduto').focus(); // Mudar o foco para o próximo campo de entrada
+            }
+        });
+
+        document.getElementById('valorProduto').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Evitar o comportamento padrão do Enter em um campo de texto
+                document.getElementById('descricaoProduto').focus(); // Mudar o foco para o próximo campo de entrada
+            }
+        });
+    </script>
+
+    <script>
+        // Fazendo uma requisição AJAX para carregar o conteúdo do arquivo
+        const urlParams = new URLSearchParams(window.location.search);
+        const produto = urlParams.get('produto');
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `C:/Users/${process.env.USERNAME}/AppData/Roaming/Formex/Dados do App/Produtos/${produto}`, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const conteudoArquivo = xhr.responseText;
+
+                // Dividindo o conteúdo em linhas
+                const linhas = conteudoArquivo.split('\n');
+
+                // Extraindo os dados das linhas
+                let nomeProduto, valorProduto, descricaoProduto, imagemBase64;
+                linhas.forEach(linha => {
+                    if (linha.startsWith('Nome do Produto:')) {
+                        nomeProduto = linha.split(':')[1].trim();
+                    } else if (linha.startsWith('Valor:')) {
+                        valorProduto = linha.split(':')[1].trim();
+                    } else if (linha.startsWith('Descrição:')) {
+                        descricaoProduto = linha.split(':')[1].trim();
+                    } else if (linha.startsWith('Imagem:')) {
+                        imagemBase64 = linha.split(':')[1].trim();
+                    }
+                });
+
+                // Atualizando o HTML com os dados extraídos
+                document.getElementById('nomeProduto').value = nomeProduto;
+                document.getElementById('nomeArquivoAtual').value = nomeProduto;
+                document.getElementById('valorProduto').value = valorProduto;
+                document.getElementById('descricaoProduto').value = descricaoProduto;
+                document.getElementById('imagemProduto').src = `data:image/jpeg;base64, ${imagemBase64}`;
+            }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>
