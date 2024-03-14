@@ -23,16 +23,16 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "shortcutName": "Formex",
-      "license": "LICENSE.md"
+      "license": "LICENSE"
     }
   },
 
-  "keywords": [],
+  "keywords": ["gerenciador", "orçamento", "finanças", "formex", "Dracster"],
 
 
   "author": {
     "name": "Dracster Studio",
-    "email": "bruno30.serpa@gmail.com"
+    "email": "dracsterstudio@gmail.com"
   }, 
 
   "license": "ISC",
