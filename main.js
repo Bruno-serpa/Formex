@@ -176,7 +176,7 @@ app.on('activate', () => {
 ipcMain.on('print-to-pdf', (event) => {
     const options = {
         title: 'Salvar PDF',
-        defaultPath: path.join(app.getPath('documents'), 'recibo.pdf'), // Definir o local padrão para salvar o PDF
+        defaultPath: path.join(app.getPath('documents'), 'orcamento.pdf'), // Definir o local padrão para salvar o PDF
         filters: [
             { name: 'PDF', extensions: ['pdf'] }
         ]
@@ -216,7 +216,7 @@ function dialogoSobre() {
       type: 'info', // tipo do dialogo
       title: ` ${appName}`,
       message: 'Sobre',
-      detail: `Um app de desktop projetado para desenvolver recibos.\n\nDesenvolvido por: Bruno Serpa\nE-mail: bruno30.serpa@gmail.com\nVersão: ${appVersion}`,
+      detail: `App desktop projetado para desenvolver orçamentos.\n\nDesenvolvido por: Bruno Serpa\nE-mail: bruno30.serpa@gmail.com\nVersão: ${appVersion}`,
       buttons: ['OK'],
       defaultId: 0,
       modal: true
@@ -507,7 +507,7 @@ function excluirRecibo(event, nomeArquivo) {
         console.log(`Recibo ${nomeArquivo} excluído com sucesso.`);
         event.reply('recibo-excluido', nomeArquivo); // Envia uma mensagem de evento para notificar a janela renderer sobre a exclusão bem-sucedida
     } catch (err) {
-        console.error(`Erro ao excluir o recibo ${nomeArquivo}:`, err);
+        console.error(`Erro ao excluir ${nomeArquivo}:`, err);
     }
 }
 
