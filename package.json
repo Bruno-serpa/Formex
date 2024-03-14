@@ -15,13 +15,14 @@
       "target": ["nsis"],
       "artifactName": "${productName} Setup ${version}.${ext}",
       "publisherName": "Dracster Studio",
-      "icon": "src/images/icon.ico",
+      "icon": "src/build/icon.ico",
       "asar": true
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
+      "installerSidebar": "src/build/installerSidebar.bmp",
       "shortcutName": "Formex",
       "license": "LICENSE"
     }
