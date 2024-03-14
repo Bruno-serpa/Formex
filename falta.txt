@@ -1,7 +1,9 @@
 Falta fazer:
 
+- Melhorar CSS
 - Criar configurações
-- Revisar tudo
+- Sistema de backup
+- poder mudar os dados da empresa (no arquivo e no app)
 
 Erros:
 

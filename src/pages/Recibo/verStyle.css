@@ -317,3 +317,32 @@ footer{
 #tabelaProdutosSelecionados .excluir:hover {
     filter: brightness(85%);
 }
+
+/* Botões */
+
+.bt-imprimir{
+    background-color: #a52a2a;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.bt-imprimir:hover{
+    background-color: #e16565;
+}
+
+.bt-pdf{
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.bt-pdf:hover{
+    background-color: var(--secundary);
+}

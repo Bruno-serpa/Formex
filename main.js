@@ -33,7 +33,7 @@ async function createWindow() {
     const iconPath = path.join(app.getAppPath(), 'src', 'images', 'icon.png');
 
     mainWindow = new BrowserWindow({
-        width: 1280,
+        width: 1350,
         height: 720,
         webPreferences: {
             nodeIntegration: true,

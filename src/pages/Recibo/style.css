@@ -276,3 +276,37 @@ footer{
 #tabelaProdutosSelecionados .excluir:hover {
     filter: brightness(85%);
 }
+
+/* Parte dos produtos */
+
+.linha{
+    width: 2px;
+    background-color: #b7b6b6;
+    margin: 10px 30px;
+}
+
+.recentes{
+    font-size: 25px;
+}
+
+/* Botão Salvar */
+
+.content_bt{
+    display: flex;
+    justify-content: end;
+}
+
+.bt-salvar{
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    margin: 20px 0px 50px 0px;
+    cursor: pointer;
+}
+
+.bt-salvar:hover{
+    background-color: var(--secundary);
+}
