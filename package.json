@@ -3,16 +3,16 @@
   "version": "1.0.1",
   "description": "Gerenciador de Orçamentos",
   "main": "main.js",
-
   "scripts": {
     "start": "electron ."
   },
-
   "build": {
     "appId": "com.dracster.formex",
     "productName": "Formex",
     "win": {
-      "target": ["nsis"],
+      "target": [
+        "nsis"
+      ],
       "artifactName": "${productName} Setup ${version}.${ext}",
       "publisherName": "Dracster Studio",
       "icon": "src/build/icon.ico",
@@ -27,19 +27,20 @@
       "license": "LICENSE"
     }
   },
-
-  "keywords": ["gerenciador", "orçamento", "finanças", "formex", "Dracster"],
-
-
+  "keywords": [
+    "gerenciador",
+    "orçamento",
+    "finanças",
+    "formex",
+    "Dracster"
+  ],
   "author": {
     "name": "Dracster Studio",
     "email": "dracsterstudio@gmail.com"
-  }, 
-
+  },
   "license": "ISC",
-
   "devDependencies": {
-    "electron": "^28.2.6",
+    "electron": "^28.2.9",
     "electron-builder": "^24.13.3"
   }
 }
