@@ -1,9 +1,18 @@
 Falta fazer:
 
 - Melhorar CSS
+- Não deixar reduzir o tamanho da tela
+- Não deixar selecionar texto (apenas nos inputs)
+- Fazer splash screen
+- Mudar nome dos recibos (Nome do cliente + data)
 - Criar configurações
 - Sistema de backup
-- poder mudar os dados da empresa (no arquivo e no app)
+- Poder mudar os dados da empresa (no arquivo e no app)
+- Fazer tela de bem vindo (para configurar os dados na primeira vez)
+- Sistema de personalizar cores
+- Sistema de personalizar recibo
+- Fazer Dark/Light Mode
+- Melhorar código
 
 Erros:
 
