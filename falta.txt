@@ -1,8 +1,6 @@
 Falta fazer:
 
 - Melhorar CSS
-- Não deixar reduzir o tamanho da tela
-- Não deixar selecionar texto (apenas nos inputs)
 - Fazer splash screen
 - Mudar nome dos recibos (Nome do cliente + data)
 - Criar configurações
