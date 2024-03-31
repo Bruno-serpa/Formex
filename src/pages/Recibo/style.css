@@ -211,6 +211,10 @@ footer{
     width: auto;
 }
 
+.searchBar{
+    justify-content: left;
+}
+
 .resultados{
     display: flex;
     height: 40px;

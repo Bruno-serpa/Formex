@@ -1,7 +1,6 @@
 Falta fazer:
 
 - Melhorar CSS
-- Fazer splash screen
 - Mudar nome dos recibos (Nome do cliente + data)
 - Criar configurações
 - Sistema de backup
@@ -10,6 +9,7 @@ Falta fazer:
 - Sistema de personalizar cores
 - Sistema de personalizar recibo
 - Fazer Dark/Light Mode
+- Adicionar animações
 - Melhorar código
 
 Erros:
