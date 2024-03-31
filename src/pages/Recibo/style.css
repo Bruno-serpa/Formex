@@ -208,7 +208,7 @@ footer{
 
 .cont-produtos{
     overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
-    width: auto;
+    width: 275px;
 }
 
 .searchBar{
@@ -291,6 +291,7 @@ footer{
 
 .recentes{
     font-size: 25px;
+    margin-bottom: 10px;
 }
 
 /* Botão Salvar */

@@ -136,12 +136,10 @@ const templateMenu = [
             dialogoSobre();
         }
     },
-    /* // Mostrar Console
     {
         label:'Console',
         role: 'toggleDevTools'
     }
-    */
 ];
 
 // Adicionar menu
