@@ -1,14 +1,12 @@
 Falta fazer:
 
 - Melhorar CSS
-- Mudar nome dos recibos (Nome do cliente + data)
 - Criar configurações
-- Sistema de backup
 - Poder mudar os dados da empresa (no arquivo e no app)
+- Sistema de backup
 - Fazer tela de bem vindo (para configurar os dados na primeira vez)
 - Sistema de personalizar cores
 - Sistema de personalizar recibo
-- Fazer Dark/Light Mode
 - Adicionar animações
 - Melhorar código
 

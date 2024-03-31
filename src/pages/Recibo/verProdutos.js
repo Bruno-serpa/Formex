@@ -303,9 +303,19 @@ function extrairImagemBase64(conteudoArquivo) {
 
 // Função para salvar os dados em um arquivo de texto
 function salvarDadosEmArquivo(dados) {
+    const dataAtual = new Date();
+    const anoAtual = dataAtual.getFullYear();
+    const mesAtual = String(dataAtual.getMonth() + 1).padStart(2, '0'); // adiciona zero à esquerda se for necessário
+    const diaAtual = String(dataAtual.getDate()).padStart(2, '0'); // adiciona zero à esquerda se for necessário
+    const horaAtual = String(dataAtual.getHours()).padStart(2, '0'); // adiciona zero à esquerda se for necessário
+    const minutosAtual = String(dataAtual.getMinutes()).padStart(2, '0'); // adiciona zero à esquerda se for necessário
+    const segundosAtual = String(dataAtual.getSeconds()).padStart(2, '0'); // adiciona zero à esquerda se for necessário
+
+    const dataEHoraAtual = `${diaAtual}-${mesAtual}-${anoAtual}_${horaAtual}-${minutosAtual}-${segundosAtual}`;
+
     // Construir o caminho completo para a pasta e o arquivo
     const pastaRecibos = `C:/Users/${process.env.USERNAME}/AppData/Roaming/Formex/Dados do App/Recibos`;
-    const nomeArquivo = `recibo_${new Date().getTime()}.txt`;
+    const nomeArquivo = `${dados.cliente}_${dataEHoraAtual}.txt`;
     const caminhoPasta = path.join(pastaRecibos);
 
     // Criar a pasta de destino, se não existir
