@@ -1,0 +1,36 @@
+# arquivos de compilação
+node_modules/
+dist/
+
+# arquivos de configuração locais
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# arquivos de compilação
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# arquivos de backup
+*.bak
+
+# arquivos temporários
+*.tmp
+
+# diretório de dependências
+.jest
+
+# arquivos de build
+build/
+out/
+
+# arquivos de cache
+.cache/
+
+# diretório de armazenamento de dados locais
+.localstorage/
+
+# arquivos de ambiente
+.env
