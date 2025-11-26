@@ -315,7 +315,7 @@ function salvarDadosEmArquivo(dados) {
 
     // Construir o caminho completo para a pasta e o arquivo
     const pastaRecibos = `C:/Users/${process.env.USERNAME}/AppData/Roaming/Formex/Dados do App/Recibos`;
-    const nomeArquivo = `${dados.cliente}_${dataEHoraAtual}.txt`;
+    const nomeArquivo = `${dados.cliente} ${dataEHoraAtual}.txt`;
     const caminhoPasta = path.join(pastaRecibos);
 
     // Criar a pasta de destino, se não existir

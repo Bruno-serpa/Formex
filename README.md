@@ -2,9 +2,9 @@
 
 ## Sobre o Projeto
 
-Olá! Bem-vindo ao Formex! Este é um projeto que estive trabalhando ultimamente e estou super empolgado para compartilhar com você.
+Olá! Bem-vindo ao Formex! Este é um projeto que estive trabalhando ultimamente e estou super empolgado para compartilhar.
 
-Formex é um Gerador de Orçamentos para desktop desenvolvido com Electron.js, HTML, CSS e JavaScript. A ideia principal por trás deste projeto é facilitar a criação de orçamentos para empresas e profissionais autônomos, permitindo armazenar dados de clientes e produtos para posteriormente gerar orçamentos que podem ser impressos e salvos em PDF.
+Formex é um Gerador de orçamentos para desktop desenvolvido com Electron.js, HTML, CSS e JavaScript. A ideia principal por trás deste projeto é facilitar a criação de orçamentos para empresas e profissionais autônomos, permitindo armazenar dados de clientes e produtos para posteriormente gerar orçamentos que podem ser impressos e salvos em PDF.
 
 Eu dediquei muito esforço para tornar o Formex responsivo e fácil de usar, garantindo uma experiência agradável para todos os usuários.
 

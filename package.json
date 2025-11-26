@@ -40,7 +40,7 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "electron": "^28.2.9",
+    "electron": "^39.2.3",
     "electron-builder": "^24.13.3"
   }
 }
